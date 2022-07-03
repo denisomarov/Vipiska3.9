@@ -1,11 +1,9 @@
 # import sqlite3
 import os
-from flask import Flask, render_template, url_for, request
+from flask import Flask, render_template, request, send_file, send_from_directory
 from treatment import v_treatment
 
 # конфигурация
-# ALLOWED_HOSTS = ['*']
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 DATABASE = '/tmp/flsite.db'
 DEBUG = True
@@ -33,6 +31,10 @@ def index():
             v_treatment(HalykFileName, SberFileName)
 
     return render_template('index.html', title='Обработка выписок из банка', menu=menu)
+
+@app.route('/uploads/<path:filename>', methods=['GET', 'POST'])
+def download(filename):
+    return send_file(filename)
 
 if __name__ == '__main__':
     app.run()

@@ -1,1 +1,1 @@
-web: gunicorn interface.wsgi
+web: gunicorn interface:app

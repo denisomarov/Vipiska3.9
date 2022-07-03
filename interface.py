@@ -4,6 +4,9 @@ from flask import Flask, render_template, url_for, request
 from treatment import v_treatment
 
 # конфигурация
+ALLOWED_HOSTS = ['*']
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 DATABASE = '/tmp/flsite.db'
 DEBUG = True
 SECRET_KEY = 'sfsfnkl5$klm^ds#m0>sdf3_9'

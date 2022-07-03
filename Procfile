@@ -1,0 +1,1 @@
+web: gunicorn vipiska-3.wsgi --log-file

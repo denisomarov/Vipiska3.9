@@ -4,6 +4,8 @@ import pandas as pd
 from openpyxl import load_workbook
 from openpyxl.styles import NamedStyle, Font, Border, Side, Alignment, PatternFill
 from openpyxl.styles.numbers import BUILTIN_FORMATS
+from flask import send_file
+
 from datetime import date
 
 # Процедура обработки выписки
